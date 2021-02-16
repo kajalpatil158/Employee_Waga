@@ -6,7 +6,13 @@ ispresent=1
 random=$((RANDOM%2))
 if(($random==$ispresent))
 then
-	echo "Employee is Present"
+        emprateperhr=20
+        emphrs=8
+        salary=$(($emprateperhr+$emphrs))
+        echo "Employee is Present"
+        echo "$salary"
 else
-	echo "Employee is Absent"
+        salary=0
+        echo "Employee is Absent"
 fi
+
