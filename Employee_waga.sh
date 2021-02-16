@@ -1,18 +1,20 @@
-#!/bin/bash
+#!/bin/bash 
 
-echo "Well Come to Employee Waga Computation"
-ispresent=1
+isPartTime=1
+isFullTime=2
+empRatePerHr=12
+randomCheck=$((RANDOM%3))
 
-random=$((RANDOM%2))
-if(($random==$ispresent))
+if [ $isFullTime -eq $randomCheck ]
 then
-        emprateperhr=20
-        emphrs=8
-        salary=$(($emprateperhr+$emphrs))
-        echo "Employee is Present"
-        echo "$salary"
+     empHrs=8
+elif  [ $isPartTime -eq $randomCheck ]
+then 
+     empHrs=8
 else
-        salary=0
-        echo "Employee is Absent"
+     empHrs=0
 fi
 
+salary=$(($empHrs*$empRatePerHr))
+echo "salary: "
+echo $salary
